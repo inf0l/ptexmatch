@@ -9,16 +9,16 @@ The script will prompt for a folder containing Pro Tools sessions, a search stri
 Depends on Damien Zammit's ptformat/ptftool being in the correct subdirectory. This Pro Tools session file parser is included as a submodule in this repo. To ensure everything is working correctly, follow these steps:
 
 1) clone this repo:
-git clone git@github.com:inf0l/ptexmatch.git
+`git clone git@github.com:inf0l/ptexmatch.git`
 
 2) initialize the submodule:
-git submodule init
+`git submodule init`
 
 3) fetch submodule data:
-git submodule update
+`git submodule update`
 
 4) enter subfolder and run make:
-cd ptformat; make; cd ..
+`cd ptformat; make; cd ..`
 
 
 ## Usage
