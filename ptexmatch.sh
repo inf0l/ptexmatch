@@ -22,13 +22,13 @@ read -p 'Output to file: ' OUTPUT
 				echo Traversing "$i"
 				printf "$i" | awk -F'/' '{print $NF}' | sed 's/.ptx//' >> "$TMPFILE"
 
-				./ptftool "$i"  | grep -i anw | 
-												sed 's/\..*//' | 
-												sed 's/\`//' | 
-												sed 's/\`.*//' | 
-												sed -E 's/-[0-9]+$//' |
-												sed -e 's/\(ANW.*\).*/ \1/' |
-												sort -u >> "$TMPFILE"
+				./ptformat/ptftool "$i"  | grep -i anw | 
+														sed 's/\..*//' | 
+														sed 's/\`//' | 
+														sed 's/\`.*//' | 
+														sed -E 's/-[0-9]+$//' |
+														sed -e 's/\(ANW.*\).*/ \1/' |
+														sort -u >> "$TMPFILE"
 		done
 }
 
