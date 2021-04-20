@@ -23,12 +23,8 @@ read -p 'Output to file: ' OUTPUT
 				printf "$i" | awk -F'/' '{print $NF}' | sed 's/.ptx//' >> "$TMPFILE"
 
 				./ptformat/ptftool "$i"  | grep -i anw | 
-														sed 's/\..*//' | 
-														sed 's/\`//' | 
-														sed 's/\`.*//' | 
-														sed -E 's/-[0-9]+$//' |
-														sed -e 's/\(ANW.*\).*/ \1/' |
-														sort -u >> "$TMPFILE"
+						sed -E -e 's/(.*)(ANW[0-9_]+[A-Za-z0-9_-]+[a-z])(.*)/ \2/' |
+						sort -u >> "$TMPFILE"
 		done
 }
 
